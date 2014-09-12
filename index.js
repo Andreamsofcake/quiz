@@ -1,8 +1,8 @@
 /**
- * Creates array with common words from the two input arrays.
+ * Creates array with names from the aspects of each element in the array.
  * 
- * @param {Array.<String>} array1 First array of words.
- * @param {Array.<String>} array2 Second array of words.
+ * @param {Array.<String>}.
+ * @param {<String>} 
  * @returns {Array.<String>} Common words.
  */
 module.exports.fullName = function(names) {
