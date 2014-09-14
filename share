@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var fs = require('fs');
+var functions = require('./index');
+
+program
+  .version('0.0.1')
+  .option('-o, --one', 'print file 1')
+  .option('-t, --two', 'print file 2')
+  .option('-r, --run', 'run index program')
+  .parse(process.argv);
+
+
+var array1 = [];
+var array2 = [];
+
+var files = program.argv
+
+if (files.length !== 2) {
+	console.log('You need to give two files');
+	process.exit(1);
+}
+
+
+fs.readFile('./file1',{ encoding: 'utf8' }, function(err, contents1) {
+	array1.push(contents1);
+	fs.readFile('./file2',{ encoding: 'utf8' }, function(err, contents2) {
+		array2.push(contents2);
+
+		if (program.one) { console.log(array1) };
+		if (program.two) { console.log(array2) };
+		if (program.run) {}
+
+		console.log('done with options');
+	});
+	
+});
+
+
+
+
