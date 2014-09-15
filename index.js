@@ -1,22 +1,16 @@
 /**
- * Compares to files and finds words in common and number of words
- * in common.
+ * A `fullName` function that takes a person object with the properties 
+ * firstName` and `lastName` and returns their full name. 
+ * A function that takes an array of people and returns an array of 
+ * their full names.
  *
- * @param {File} Two text files
- * @param {Function} creates arrays with words from the files.
- * @param {function} compare shared words in the arrays.
- * @param {Function} to count shared words.
- * @returns {words} new array of all the words in common.
- * @returns {number} number of words in the array.
+ * @param {Array} An array of objects that each have the same properties.
+ * @param {Function} pulls the properties to make a new objects: the "name"
+ * @param {Function} creates arrays with "names" from the arrays.
+ * @returns {words} new array of all the Names.
+ * 
  */
 
-/**
- * Creates array with common words from the two input arrays.
- * 
- * @param {Array.<String>} array1 First array of words.
- * @param {Array.<String>} array2 Second array of words.
- * @returns {Array.<String>} Common words.
- */
 module.exports.fullName = function (array1, array2) {
 	var newArray = [] 
 	array1.forEach(function(word) {
