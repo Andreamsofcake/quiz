@@ -10,16 +10,26 @@
  * @returns {words} new array of all the Names.
  * 
  */
-
-module.exports.fullName = function (array1, array2) {
-	var newArray = [] 
-	array1.forEach(function(word) {
-		array2.forEach(function(word2){
-			if(word === word2) {
-				newArray.push(word);
-			}
-		});
-  	});
-	return newArray;
+ var forEach = function(array, fn) {
+  var next = function(array, n, fn) {
+    if (n < array.length) {
+      fn(array[n]);
+      next(array, n+1, fn);
+    }
+  };
+  next(array, 0, fn);
 };
+
+module.exports.fullName = function(array, fn) {
+
+  var newArray = []; 
+  forEach(array, function(item) {
+    newArray.push(fn(item))
+  });
+
+  return newArray
+  ;
+};
+
+
 
